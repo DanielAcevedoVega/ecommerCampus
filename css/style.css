@@ -49,14 +49,28 @@
 }
 .nav__search{
     background: rebeccapurple;
+    position: relative;
 }
+
 .nav__search input{
     outline: none;
     width: 260px;
     height: 45px;
     border-radius: 10px;
+    padding-left: 2.5rem;
+    padding-right: 1.5rem;
     border: 1px solid var(--color3);
 }
+
+#icon{
+    position: absolute;
+    display: block;
+    bottom: .6rem;
+    left: .8rem;
+    user-select: none;
+    cursor: pointer;
+}
+
 .nav__filter{
     background: var(--color1);
     width: 40px;
