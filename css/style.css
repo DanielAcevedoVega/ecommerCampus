@@ -39,8 +39,37 @@
     width: 100%;
     
 }
-.nav {
+.nav{
     background: violet;
+    padding: var(--space-layout-padding-lr);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav__search{
+    background: rebeccapurple;
+}
+.nav__search input{
+    outline: none;
+    width: 260px;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid var(--color3);
+}
+.nav__filter{
+    background: var(--color1);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.nav__filter img{
+    width: 20px;
+    position: absolute;
+    inset: 0;
+    margin: auto;
 }
 .main {
     background: greenyellow;
