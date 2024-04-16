@@ -5,3 +5,43 @@
     font-family: "EncodeSans-Regular";
     box-sizing: border-box;
 }
+
+.header {
+    /* background: red; */
+    padding: var(--space-layout-padding-lr);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.header__information{
+    /* background: green; */
+}
+
+.header__information p{
+    font-family: "EncondeSans-Regular";
+    padding-top: 10px;
+}
+
+.header__information span{
+    font-family: "EncondeSans-Bold";
+}
+.header__login{
+    /* background: palevioletred; */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.header__login img{
+    width: 100%;
+    
+}
+.nav {
+    background: violet;
+}
+.main {
+    background: greenyellow;
+}
