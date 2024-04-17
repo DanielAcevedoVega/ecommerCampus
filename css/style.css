@@ -40,15 +40,16 @@
     
 }
 .nav{
-    background: violet;
+    /* background: violet; */
     padding: var(--space-layout-padding-lr);
+    margin-top: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 .nav__search{
-    background: rebeccapurple;
+    /* background: rebeccapurple; */
     position: relative;
 }
 
@@ -85,6 +86,57 @@
     inset: 0;
     margin: auto;
 }
-.main {
-    background: greenyellow;
+
+.nav__filter svg:hover path{
+    stroke: white;
 }
+
+
+.main {
+    background: red;
+    padding: var(--space-layout-padding-lr);
+    margin-top: 15px;
+}
+.main__nav {
+    background: pink;
+    padding: 10px;
+}
+.nav__ul {
+    /* background: darkgray;  */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    overflow-x: scroll;
+    height: 50px;
+}
+
+.nav__ul li{
+    list-style: none;
+}
+
+.nav__ul li a{
+    width: 105px;
+    height: 36px;
+    font-family: "EncondeSans-Medium";
+    /* background: yellow; */
+    text-decoration: none;
+    color:  var(--color2);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid var(--color3);
+}
+
+
+.nav__ul li a:hover{
+    background: var(--color1);
+    color: var(--color5);
+}
+
+.nav__ul li a:hover img{
+    filter: invert(1);
+}
+
