@@ -7,24 +7,26 @@
     --color6: #343031;
     --space-layout-padding-lr: 0px 15px;
     --space-layout-padding-t: 5px;
+    --layout-imagen-width: 154px;
+    --layout-imagen-height: 211px;
 }
 
 @font-face{
-    font-family: "EncondeSans-Regular";
+    font-family: "EncodeSans-Regular";
     src: url("../storage/font/encodeSans/EncodeSans-Regular.ttf");
 }
 
 @font-face{
-    font-family: "EncondeSans-Medium";
+    font-family: "EncodeSans-Medium";
     src: url("../storage/font/encodeSans/EncodeSans-Medium.ttf");
 }
 
 @font-face{
-    font-family: "EncondeSans-semiBold";
+    font-family: "EncodeSans-semiBold";
     src: url("../storage/font/encodeSans/EncodeSans-SemiBold.ttf");
 }
 
 @font-face{
-    font-family: "EncondeSans-Bold";
+    font-family: "EncodeSans-Bold";
     src: url("../storage/font/encodeSans/EncodeSans-Bold.ttf");
 }

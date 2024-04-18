@@ -21,12 +21,11 @@
 }
 
 .header__information p{
-    font-family: "EncondeSans-Regular";
     padding-top: 10px;
 }
 
 .header__information span{
-    font-family: "EncondeSans-Bold";
+    font-family: "EncodeSans-Bold";
 }
 .header__login{
     /* background: palevioletred; */
@@ -118,7 +117,7 @@
 .nav__ul li a{
     width: 105px;
     height: 36px;
-    font-family: "EncondeSans-Medium";
+    font-family: "EncodeSans-Medium";
     /* background: yellow; */
     text-decoration: none;
     display: flex;
@@ -166,3 +165,92 @@
     height: 24px;
 }
 
+.main__article{
+    height: 70vh;
+    margin-top: 15px;
+    background: red;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: scroll;
+}
+.main__article section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: green;
+    width: 48%;
+    height: 290px;
+    margin-bottom: 4%;
+}
+
+.main__article section:nth-child(4n+1),
+.main__article section:nth-child(4n+4){
+    background: cadetblue;
+    height: 260px;
+}
+
+
+.main__article section:nth-child(4n-1){
+    background: violet;
+    position: relative;
+    margin-top: -30px;
+}
+
+.section__front_page{
+    background: blue;
+    position: relative;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    border-radius: 14px;
+    width: var(--layout-imagen-width);
+    height: var(--layout-imagen-height);
+    overflow: hidden;
+}
+.section__front_page img{
+    position: absolute;
+}
+.section__front_page img:first-child{
+    width: var(--layout-imagen-width);
+    height: var(--layout-imagen-height);
+    object-fit: cover;
+}
+.section__front_page img:last-child{    
+    top: 10px;
+    right: 10px;
+}
+
+.main__article section h5{
+    font-family: "EncodeSans-SemiBold";
+    color: var(--color2);
+    margin-bottom: 9PX;
+}
+
+.main__article section small{
+    color: var(--color3);
+}
+
+.main__article section h5,
+.main__article section small{
+    align-self: flex-start;
+}
+
+.section__price{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: var(--color2);
+    margin-top: 10px;
+}
+
+.section__price span{
+    font-family: "EncodeSans-SemiBold";
+}
+
+.price__score{
+    display: flex;
+    gap: 5px;
+}
