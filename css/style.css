@@ -166,3 +166,37 @@
     height: 24px;
 }
 
+.main__article{
+    height: 70vh;
+    margin-top: 15px;
+    background: red;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: scroll;
+}
+.main__article section{
+    background: green;
+    width: 49%;
+    height: 290px;
+    margin-bottom: 4%;
+}
+
+.main__article section:nth-child(4n+1),
+.main__article section:nth-child(4n+4){
+    background: cadetblue;
+    height: 260px;
+}
+
+
+.main__article section:nth-child(4n-1){
+    background: violet;
+    position: relative;
+    top: -30px;
+}
+/* .main__article section:nth-child(4n-2){
+    position: relative;
+    background: blue;
+
+} */
