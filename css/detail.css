@@ -81,3 +81,26 @@
     text-decoration: none;
 }
 
+.footer {
+    position: fixed;
+    width: 100%;
+    bottom: 10px;
+    padding: var(--space-layout-padding-lr);
+    
+}
+
+.footer__add {
+    background: var(--color1);
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    gap: 4px;
+}
+
+.footer__add strong,
+.footer__add small{
+    color: var(--color5);
+}
