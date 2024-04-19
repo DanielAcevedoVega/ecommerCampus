@@ -41,5 +41,43 @@
     position: absolute;
     display: flex;
     justify-content: space-between;
-    padding: 5px 15px 0 15px;
+    padding: 15px 15px 0 15px;
 }
+
+.article__detail {
+    /* background: red; */
+}
+.detail__head {
+    margin-top: 20px;
+    /* background: green; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.detail__head h1{
+    font-family: "EncodeSans-SemiBold";
+}
+.product__select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.product__select span{
+    font-family: "EncodeSans-Bold";
+}
+
+.detail__score {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.detail__score span{
+    color: var( --color3);
+}
+
+.detail__score a{
+    text-decoration: none;
+}
+
