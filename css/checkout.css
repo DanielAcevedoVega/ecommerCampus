@@ -5,3 +5,16 @@
     font-family: "EncodeSans-Regular";
     box-sizing: border-box;
 }
+.header {
+    padding: var(--space-layout-padding-lr);
+}
+.header__nav {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 15px 0 15px;
+}
+.header__nav div:nth-child(2) {
+    font-family: "EncodeSans-semiBold";
+}
