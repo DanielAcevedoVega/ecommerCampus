@@ -154,3 +154,10 @@
 .footer__ul li a img{
     width: 25px;
 }
+.footer__ul li a span{
+    font-family: "EncodeSans-Medium";
+}
+.footer__ul li a del{
+    color: var(--color3);
+    font-family: "EncodeSans-Regular";
+}
