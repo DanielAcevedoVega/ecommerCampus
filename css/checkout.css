@@ -100,26 +100,58 @@
 .dropdown {
     position: relative;
     display: inline-block;
+    width: 100%;
 }
-.dropbtn {
-    background-color: greenyellow;
-    color: white;
+.dropdown__button {
+    background-color: var(--color7);
+    border-radius: 5px;
+    width: 100%;
+    color: var(--color1);
     padding: 16px;
     font-size: 16px;
-    border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-.dropdown-content {
+.shopping__card{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.dropdown__content {
     display: none;
     position: absolute;
-    background-color: white;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    background-color: var(--color5);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
-.dropdown-content a{
-    color: black;
+.dropdown__content div:last-child{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.dropdown__content div{
+    color: var(--color1);
     padding: 12px 16px;
-    text-decoration: none;
     display: block;
+}
+.dropdown__content div:hover{
+    background-color: var(--color1);
+    color: var(--color5);
+    cursor: pointer;
+}
+.dropdown:hover .dropdown__content{
+    display: block;
+    width: 100%;
+}
+.dropdown:hover .dropdown__button{
+    background-color: var(--color1);
+    color: var(--color5);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.dropdown:hover .dropdown__button .shopping__option{
+    filter: invert(1);
 }
