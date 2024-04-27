@@ -97,6 +97,16 @@
     width: 20px;   
 }
 
+.section__shopping{
+    margin-top: 50px;
+
+}
+.shopping__title{
+    margin-bottom: 15px;
+}
+.section__card{
+    margin-bottom: 15px;
+}
 .dropdown {
     position: relative;
     display: inline-block;
