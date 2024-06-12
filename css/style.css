@@ -115,7 +115,7 @@
 }
 
 .nav__ul li a{
-    width: 105px;
+    width: 125px;
     height: 36px;
     font-family: "EncodeSans-Medium";
     /* background: yellow; */
@@ -129,6 +129,11 @@
     color:  var(--color1);
     background: var(--color5);
 }
+.nav__ul li a span{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}   
 
 .nav__ul li a:hover{
     filter: invert(1);
@@ -143,7 +148,7 @@
 }
 .footer__ul {
     background: var(--color1);
-    height: 60px;
+    height: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
