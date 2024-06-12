@@ -10,15 +10,18 @@ export const galleryIndex = (res)=>{
             <a href="views/detail.html">
                 <img src="${value.product_photo}">
             </a>
-           <a href="#"></a> <img src="storage/img/heart.svg">
+            <button>
+                <img src="storage/img/heart.svg">
+            </button>
+
         </div>
         <h5>${value.product_title}</h5>
-        <small>Dress modern</small>
+        <small>${value.sales_volume}</small>
         <div class="section__price">
-            <span>$212.99</span>
+            <span>${value.product_price}</span>
             <div class="price__score">
                 <img src="storage/img/star.svg">
-                <p>5.0</p>
+                <p>${value.product_star_rating}</p>
             </div>
         </div>
     </section>`;
