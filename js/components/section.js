@@ -18,3 +18,52 @@ export const titleProductDetail = async({data}) =>{
         </div>
     </article>`;
 }
+
+export const infomationProductDetail = async({data}) =>{
+    return /*html*/`
+    <article class="product__information">
+                <p>
+                    ${data.product_description} <strong>Read More. . .</strong>
+                </p>
+            </article>
+            <hr>
+        </section>
+        <section class="main__section">
+            <article class="product__custom">
+                <div class="product__size">
+                    <h5>
+                        Choose Size
+                    </h5>
+                    <div>
+                        <img src="../storage/img/s.svg">
+                        <img src="../storage/img/m.svg">
+                        <img src="../storage/img/l.svg">
+                        <img src="../storage/img/xl.svg">
+                    </div>
+                </div>
+                <div class="product__color">
+                    <h5>
+                        Color
+                    </h5>
+                    <div>
+                        <img src="../storage/img/1.svg">
+                        <img src="../storage/img/2.svg">
+                        <img src="../storage/img/3.svg">
+                    </div>
+                </div>
+            </article>`;
+}
+
+export const footerProductDetail = async ({data})=>{
+    return /*html*/`
+    <ul class="footer__ul">
+        <li>
+            <a href="checkout.html">
+                <img src="../storage/img/car.svg">
+                <span>Add to Cart | ${data.product_price}
+                <del><sub>${(data.product_original_price != null) ? data.product_original_price : ""}</sub> </del>
+                </span>
+            </a>
+        </li>
+    </ul>`
+}
