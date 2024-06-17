@@ -12,18 +12,19 @@ export const titleProductDetail = async({data}) =>{
             </div>
         </div>
         <div class="detail__score">
-            ${new Array(parseInt(data.product_star_rating)).fill(`<img src="../storage/img/star.svg">`).join('')}
-            <span>${data.product_star_rating}</span>
-            <a href="${data.product_url}">(${data.product_num_ratings} reviews)</a>
+            ${data.product_star_rating ? new Array(parseInt(data.product_star_rating)).fill(`<img src="../storage/img/star.svg">`).join('') : 'Producto no calificado'}
+            <span>${(data.product_star_rating != null) ? data.product_star_rating: 0}</span>
+            <a href="${data.product_url}">(${(data.product_num_ratings != null) ? data.product_num_ratings: 0} reviews)</a>
         </div>
     </article>`;
 }
 
 export const infomationProductDetail = async({data}) =>{
+    console.log(data)
     return /*html*/`
     <article class="product__information">
                 <p>
-                    ${data.product_description} <strong>Read More. . .</strong>
+                    ${(data.product_description != "") ? data.product_description: "Sin descripcion"} <strong>Read More. . .</strong>
                 </p>
             </article>
             <hr>
