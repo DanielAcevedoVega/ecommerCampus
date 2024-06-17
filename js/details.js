@@ -1,4 +1,4 @@
-import { getProducId } from "./module/detail.js";
+import { getProductId } from "./module/detail.js";
 import { galleryCategory } from "./components/gallery.js";
 import { footerProductDetail, infomationProductDetail, titleProductDetail } from "./components/section.js";
 
@@ -10,7 +10,7 @@ let footerDetail = document.querySelector('#footer__detail');
 addEventListener("DOMContentLoaded", async e =>{
     let params = new URLSearchParams(location.search);
     let id = params.get('id')
-    if(!localStorage.getItem(id)) localStorage.setItem(id, JSON.stringify(await getProducId({id})));
+    if(!localStorage.getItem(id)) localStorage.setItem(id, JSON.stringify(await getProductId({id})));
 
     let title = JSON.parse(localStorage.getItem(id));
     let info = JSON.parse(localStorage.getItem(id));

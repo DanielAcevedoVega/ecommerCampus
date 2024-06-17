@@ -23,3 +23,19 @@ export const getAllCategory = async()=>{
     let data = res.json();
     return data;
 }
+
+export const getAllProductRandom = async({query="pantalon", page=861, category_id="fashion", min_price=20, max_price=100, brand=["adidas", "Lee", "amazon essentials", "Dockers"]})=>{
+    console.log("Esperando ...................")
+    page = Math.random()*(page/20);
+    page = parseInt(Math.round(page));
+    if(!page) page = 1;
+    const url = `https://real-time-amazon-data.p.rapidapi.com/search?query=${query}&page=${page}&country=US&sort_by=RELEVANCE&category_id=${category_id}&min_price=${min_price}&max_price=${max_price}&product_condition=NEW&brand=${brand.join("%2C")}`;
+    const options = {
+	    method: 'GET',
+	    headers
+    };  
+    let res = await fetch(url, options);
+    let data = res.json();
+    return data;
+}
+

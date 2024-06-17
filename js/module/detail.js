@@ -2,7 +2,7 @@ import { headers } from "../components/env.js";
 
 
 
-export const getProducId = async({id: idProduct}) =>{
+export const getProductId = async({id: idProduct}) =>{
     console.log("Esperando ...................")
     const url = `https://real-time-amazon-data.p.rapidapi.com/product-details?asin=${idProduct}&country=US`;
     const options = {

@@ -34,7 +34,7 @@ export const galleryCategory = ({data: {product_photos}})=>{
                 ${product_photos.map(value => `<div class="product__image__item"><img src="${value}"></div>`).join('')}
             </div>
             <div class="product__menu">
-                <a href="../">
+                <a href="../?='fashion'">
                     <img src="../storage/img/back.svg">
                 </a>
                 <img src="../storage/img/heartBlack.svg">
