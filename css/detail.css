@@ -86,7 +86,7 @@
     align-items: center;
 }
 .detail__score span{
-    color: var( --color3);
+    color: var(--color3);
 }
 
 .detail__score a{
@@ -94,13 +94,26 @@
 }
 
 .product__information{
-    width: 75%;
     margin-top: 15px;
     color: var(--color3);
 }
 .product__information strong{
     color: var(--color2);
-
+}
+summary{
+    list-style: none;
+}
+summary::-webkit-details-marker{
+    display: none;
+}
+summary{
+    border-radius: 5px;
+}
+details[open] summary{
+    border-radius: 5px 5px 0 0;
+}
+details{
+    border-radius: 5px;
 }
 
 .product__information + hr{
