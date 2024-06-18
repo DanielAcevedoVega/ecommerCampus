@@ -18,8 +18,13 @@ addEventListener("DOMContentLoaded", async e =>{
 
     mainSectionGallery.innerHTML = await galleryCategory(JSON.parse(localStorage.getItem(id)));
     mainSectionTitle.innerHTML = await titleProductDetail(title);
+    let btnMinus = document.querySelector('#btn__minus');
+    let btnPlus = document.querySelector('#btn__plus');
     mainSectionInformation.innerHTML = await infomationProductDetail(info);
     footerDetail.innerHTML = await footerProductDetail(price);
+
+    btnMinus.addEventListener("click", quantity)
+    btnPlus.addEventListener("click", quantity)
     // let {data} = res;
     // let {
     //     category_path,
@@ -34,3 +39,22 @@ addEventListener("DOMContentLoaded", async e =>{
     // } = data;
     // console.log(dataUpdate);
 })
+
+const quantity = async (e)=>{
+    let spanQuantity = document.querySelector("#span__quantity");
+    let priceDiscount = document.querySelector("#price_discount");
+    let priceOriginal = document.querySelector("#price_original");
+    let params = new URLSearchParams(location.search);
+    let id = params.get('id');
+    let res = JSON.parse(localStorage.getItem(id)).data;
+
+    let productOriginalPrice = undefined;
+    if(res.product_original_price) productOriginalPrice = Number.parseFloat(res.product_original_price.replace("$", ""));
+    let productPrice = Number.parseFloat(res.product_price.replace("$", ""));
+
+    if(e.target.id == "btn__plus")spanQuantity.innerHTML = Number.parseFloat(spanQuantity.innerHTML) + 1
+    if(e.target.id == "btn__minus" && spanQuantity.innerHTML > "1")spanQuantity.innerHTML = Number.parseFloat(spanQuantity.innerHTML) - 1;
+
+    priceDiscount.innerHTML = `$${(productPrice * Number.parseFloat(spanQuantity.innerHTML)).toFixed(2)}`;
+    if(productOriginalPrice) priceOriginal.innerHTML = `$${(productOriginalPrice * Number.parseFloat(spanQuantity.innerHTML)).toFixed(2)}`;
+}

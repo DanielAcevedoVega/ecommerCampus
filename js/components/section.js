@@ -6,9 +6,9 @@ export const titleProductDetail = async({data}) =>{
                 ${data.product_title}
             </h1>
             <div class="product__select">
-                <img src="../storage/img/minus.svg">
-                <span>1</span>
-                <img src="../storage/img/plus.svg">
+                <img id="btn__minus" src="../storage/img/minus.svg">
+                <span id="span__quantity">1</span>
+                <img id="btn__plus" src="../storage/img/plus.svg">
             </div>
         </div>
         <div class="detail__score">
@@ -61,8 +61,8 @@ export const footerProductDetail = async ({data})=>{
         <li>
             <a href="checkout.html">
                 <img src="../storage/img/car.svg">
-                <span>Add to Cart | ${data.product_price}
-                <del><sub>${(data.product_original_price != null) ? data.product_original_price : ""}</sub> </del>
+                <span>Add to Cart | <span id="price_discount">${data.product_price}</span>
+                <del><sub><span id="price_original">${(data.product_original_price != null) ? data.product_original_price : ""}</span></sub> </del>
                 </span>
             </a>
         </li>
