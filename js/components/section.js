@@ -20,39 +20,15 @@ export const titleProductDetail = async({data}) =>{
 }
 
 export const infomationProductDetail = async({data}) =>{
-    console.log(data)
+    let stringIn = data.product_description.slice(0, 165);
+    let stringEnd = data.product_description.slice(166);
     return /*html*/`
-    <article class="product__information">
-                <p>
-                    ${(data.product_description != "") ? data.product_description: "Sin descripcion"} <strong>Read More. . .</strong>
-                </p>
-            </article>
-            <hr>
-        </section>
-        <section class="main__section">
-            <article class="product__custom">
-                <div class="product__size">
-                    <h5>
-                        Choose Size
-                    </h5>
-                    <div>
-                        <img src="../storage/img/s.svg">
-                        <img src="../storage/img/m.svg">
-                        <img src="../storage/img/l.svg">
-                        <img src="../storage/img/xl.svg">
-                    </div>
-                </div>
-                <div class="product__color">
-                    <h5>
-                        Color
-                    </h5>
-                    <div>
-                        <img src="../storage/img/1.svg">
-                        <img src="../storage/img/2.svg">
-                        <img src="../storage/img/3.svg">
-                    </div>
-                </div>
-            </article>`;
+    <details>
+            <summary>
+                ${(data.product_description.length >= 165) ? stringIn+"<strong>Read More. . .</strong>": stringIn} 
+            </summary>
+            <p>${stringEnd}</p>
+    </details>`;
 }
 
 export const footerProductDetail = async ({data})=>{

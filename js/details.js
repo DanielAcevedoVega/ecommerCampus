@@ -4,7 +4,7 @@ import { footerProductDetail, infomationProductDetail, titleProductDetail } from
 
 let mainSectionGallery = document.querySelector('#main__section__gallery');
 let mainSectionTitle = document.querySelector('#main__section__title');
-let mainSectionInformation = document.querySelector('#main__section__information');
+let productoInformation = document.querySelector('.product__information');
 let footerDetail = document.querySelector('#footer__detail');
 
 addEventListener("DOMContentLoaded", async e =>{
@@ -20,7 +20,7 @@ addEventListener("DOMContentLoaded", async e =>{
     mainSectionTitle.innerHTML = await titleProductDetail(title);
     let btnMinus = document.querySelector('#btn__minus');
     let btnPlus = document.querySelector('#btn__plus');
-    mainSectionInformation.innerHTML = await infomationProductDetail(info);
+    productoInformation.innerHTML = await infomationProductDetail(info);
     footerDetail.innerHTML = await footerProductDetail(price);
 
     btnMinus.addEventListener("click", quantity)
