@@ -13,14 +13,14 @@ let navUl = document.querySelector(".nav__ul");
 
 
 let searchProducts = async e => {
-
+    e.preventDefault();
     let params = new URLSearchParams(location.search);
     let dataSearch = {search : e.target.value, id: params.get("id")}
     inputSearch.value = null;
     let res = "";
 
     if(inputSearch.dataset.opc == "random"){
-        res = await getAllProductRandom({})
+        res = await getAllProductRandom({});
         delete inputSearch.dataset.opc
         history.pushState(null, "", "?id=aps");
         console.log(dataSearch)
@@ -45,6 +45,13 @@ let searchProducts = async e => {
     Promise.all([proceso]).then(res =>{console.log(res);})
 };
 
+let handleCategoryClick = e => {
+    e.preventDefault();
+    let categoryID = e.target.closest('a').dataset.id;
+    history.pushState(null, "", `?id=${categoryID}`);
+    inputSearch.dispatchEvent(new Event('change'));
+}
+
 addEventListener("DOMContentLoaded", async e =>{
     if(!localStorage.getItem("getAllCategory")) localStorage.setItem("getAllCategory", JSON.stringify(await getAllCategory()));
     navUl.innerHTML = await menuListCategoryIndex(JSON.parse(localStorage.getItem("getAllCategory")));
@@ -53,6 +60,10 @@ addEventListener("DOMContentLoaded", async e =>{
     inputSearch.value = "pantalon"
     const eventoChange = new Event('change');
     inputSearch.dispatchEvent(eventoChange);
+
+    document.querySelectorAll('.category-link').forEach(link => {
+        link.addEventListener('click', handleCategoryClick);
+    });
 });
 
 inputSearch.addEventListener("change", searchProducts);
