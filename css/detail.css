@@ -112,6 +112,12 @@ summary{
 details[open] summary{
     border-radius: 5px 5px 0 0;
 }
+.read__more{
+    cursor: pointer;
+}
+details[open] .read__more{
+    display: none;
+}
 details{
     border-radius: 5px;
 }

@@ -21,11 +21,11 @@ export const titleProductDetail = async({data}) =>{
 
 export const infomationProductDetail = async({data}) =>{
     let stringIn = data.product_description.slice(0, 165);
-    let stringEnd = data.product_description.slice(166);
+    let stringEnd = data.product_description.slice(165);
     return /*html*/`
     <details>
             <summary>
-                ${(data.product_description.length >= 165) ? stringIn+"<strong>Read More. . .</strong>": stringIn} 
+                ${(data.product_description.length >= 165) ? stringIn+'<strong class="read__more">Read More. . .</strong>': stringIn} 
             </summary>
             <p>${stringEnd}</p>
     </details>`;
