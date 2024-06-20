@@ -20,12 +20,13 @@ export const titleProductDetail = async({data}) =>{
 }
 
 export const infomationProductDetail = async({data}) =>{
-    let stringIn = data.product_description.slice(0, 165);
-    let stringEnd = data.product_description.slice(165);
+    let description = (data.product_description === null || data.product_description.trim() === "") ? "Sin descripcion": data.product_description
+    let stringIn = description.slice(0, 165);
+    let stringEnd = description.slice(165);
     return /*html*/`
     <details>
             <summary>
-                ${(data.product_description.length >= 165) ? stringIn+'<strong class="read__more">Read More. . .</strong>': stringIn} 
+                ${(description.length >= 165) ? stringIn+'<strong class="read__more">Read More. . .</strong>': stringIn} 
             </summary>
             <p>${stringEnd}</p>
     </details>`;
