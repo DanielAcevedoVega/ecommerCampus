@@ -8,10 +8,7 @@ export const galleryIndex = (res, category)=>{
             <a href="views/detail.html?id=${value.asin}">
                 <img src="${value.product_photo}">
             </a>
-            <button>
                 <img src="storage/img/heart.svg">
-            </button>
-
         </div>
         <h5>${value.product_title}</h5>
         <small>${category}</small>
@@ -34,7 +31,7 @@ export const galleryCategory = ({data: {product_photos}})=>{
                 ${product_photos.map(value => `<div class="product__image__item"><img src="${value}"></div>`).join('')}
             </div>
             <div class="product__menu">
-                <a href="../?='fashion'">
+                <a href="javascript:window.history.back()">
                     <img src="../storage/img/back.svg">
                 </a>
                 <img src="../storage/img/heartBlack.svg">
