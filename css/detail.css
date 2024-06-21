@@ -121,6 +121,12 @@ details[open] .read__more{
 details{
     border-radius: 5px;
 }
+.swal2-show{
+    width: 250px;
+}
+div:where(.swal2-container) div:where(.swal2-popup) {
+    grid-template-rows: minmax(0, 100%);
+}
 
 .product__information + hr{
     margin-top: 10px;
