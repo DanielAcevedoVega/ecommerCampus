@@ -36,9 +36,9 @@ export const footerProductDetail = async ({data})=>{
     return /*html*/`
     <ul class="footer__ul">
         <li>
-            <a href="checkout.html">
+            <a href="javascript:void(0);" id="btnAddToCart">
                 <img src="../storage/img/car.svg">
-                <span>Add to Cart | <span id="price_discount">${data.product_price}</span>
+                <span>Add to Cart | <span id="price_discount">${(data.product_price != null) ? data.product_price: "Product not available"}</span>
                 <del><sub><span id="price_original">${(data.product_original_price != null) ? data.product_original_price : ""}</span></sub> </del>
                 </span>
             </a>

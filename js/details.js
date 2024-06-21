@@ -22,23 +22,71 @@ addEventListener("DOMContentLoaded", async e =>{
     let btnPlus = document.querySelector('#btn__plus');
     productoInformation.innerHTML = await infomationProductDetail(info);
     footerDetail.innerHTML = await footerProductDetail(price);
+    let btnAddCart = document.querySelector('#btnAddToCart');
+    btnAddCart.addEventListener('click', addToCart)
 
     btnMinus.addEventListener("click", quantity)
     btnPlus.addEventListener("click", quantity)
-    // let {data} = res;
-    // let {
-    //     category_path,
-    //     about_product,
-    //     product_details,
-    //     product_information,
-    //     product_photos,
-    //     product_variations,
-    //     rating_distribution,
-    //     review_aspects,
-    //     ...dataUpdate
-    // } = data;
-    // console.log(dataUpdate);
 })
+
+const addToCart = async (e)=>{
+    e.preventDefault();
+
+    let params = new URLSearchParams(location.search);
+    let id = params.get('id');
+    let product = JSON.parse(localStorage.getItem(id)).data;
+
+    if(product.product_price == null){
+        Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "Product not available for purchase!",
+            showConfirmButton: true,
+        });
+        return;
+    }
+
+    let quantity = parseFloat(document.querySelector('#span__quantity').innerHTML);
+
+    let cart = sessionStorage.getItem('cart') ? JSON.parse(sessionStorage.getItem('cart')) : {};
+    if(cart[id]){
+        if(cart[id].quantity !== quantity){
+            cart[id].quantity = quantity;
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Product quantity updated in the cart!",
+                showConfirmButton: false,
+                timer: 2200
+            });
+        } else {
+            Swal.fire({
+                position: "top-end",
+                icon: "info",
+                title: "Product is already in the cart with the same quantity!",
+                showConfirmButton: true,
+            });
+        }
+    } else {
+        cart[id] = {
+            product,
+            quantity,
+            title: product.product_title,
+            image: product.product_photo,
+            category: product.category_path[product.category_path.length -1].name
+        };
+
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Product added to cart!",
+            showConfirmButton: false,
+            timer: 1500
+        });
+    }
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+
+}
 
 const quantity = async (e)=>{
     let spanQuantity = document.querySelector("#span__quantity");
