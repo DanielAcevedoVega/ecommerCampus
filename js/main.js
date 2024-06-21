@@ -6,9 +6,12 @@ import { getProductId } from "./module/detail.js";
 let inputSearch = document.querySelector("#input__search");
 let mainArticle = document.querySelector(".main__article");
 let navUl = document.querySelector(".nav__ul");
+let loadPage = document.querySelector('#loader-page')
 
 const loadProducts = async (dataSearch, isRandom = false) => {
     let res = "";
+
+    loadPage.style.display = 'flex'; 
 
     if (isRandom) {
         res = await getAllProductRandom({});
@@ -19,6 +22,8 @@ const loadProducts = async (dataSearch, isRandom = false) => {
         sessionStorage.setItem("products", JSON.stringify(res));
         sessionStorage.setItem("isRandom", false);
     }
+
+    loadPage.style.display = 'none'; 
 
     if (res.data && res.data.products) {
         mainArticle.innerHTML = galleryIndex(res, dataSearch.id);
@@ -38,7 +43,7 @@ let searchProducts = async (e) => {
     let params = new URLSearchParams(location.search);
     let dataSearch = { search: inputSearch.value, id: params.get("id") };
     inputSearch.value = null;
-
+    
     await loadProducts(dataSearch, false);
 };
 

@@ -6,10 +6,12 @@ let mainSectionGallery = document.querySelector('#main__section__gallery');
 let mainSectionTitle = document.querySelector('#main__section__title');
 let productoInformation = document.querySelector('.product__information');
 let footerDetail = document.querySelector('#footer__detail');
+let loadPage = document.querySelector('#loader-page');
 
 addEventListener("DOMContentLoaded", async e =>{
     let params = new URLSearchParams(location.search);
-    let id = params.get('id')
+    let id = params.get('id');
+    loadPage.style.display = 'flex'; 
     if(!localStorage.getItem(id)) localStorage.setItem(id, JSON.stringify(await getProductId({id})));
 
     let title = JSON.parse(localStorage.getItem(id));
@@ -27,7 +29,9 @@ addEventListener("DOMContentLoaded", async e =>{
 
     btnMinus.addEventListener("click", quantity)
     btnPlus.addEventListener("click", quantity)
-})
+
+    loadPage.style.display = 'none'; 
+});
 
 const addToCart = async (e)=>{
     e.preventDefault();
