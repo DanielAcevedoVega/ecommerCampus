@@ -78,12 +78,32 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
-    
+    position: relative;
 }
 .product__custom > img{
     width: 35px;
     align-self: flex-end;
     object-fit: scale-down;
+}
+.product__options-menu {
+    position: absolute;
+    top: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 5px;
+    display: none;
+}
+
+.product__options-menu button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.product__options-menu button:hover {
+    background-color: #c0392b;
 }
 .product__select{
     display: flex;

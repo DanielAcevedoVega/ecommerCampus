@@ -18,7 +18,13 @@ addEventListener("DOMContentLoaded", async e => {
     document.querySelectorAll('.btn-plus').forEach(btn => {
         btn.addEventListener('click', updateQuantity);
     });
-    
+    document.querySelectorAll('.btn-options').forEach(btn => {
+        btn.addEventListener('click', optionMenu);
+    });
+
+    document.querySelectorAll('.btn-delete').forEach(btn => {
+        btn.addEventListener('click', deleteProduct);
+    });
     updateTotals();
 });
 
@@ -56,4 +62,19 @@ const updateQuantity  = (e) =>{
     updateTotals();
 };
 
+const optionMenu = (e) =>{
+    let btn = e.target;
+    let optionsMenu = btn.nextElementSibling;
+    optionsMenu.style.display = optionsMenu.style.display === 'none' ? 'block' : 'none';
+}
 
+const deleteProduct = (e) =>{
+    let btn = e.target;
+    let article = btn.closest('.details__product');
+    let id = article.getAttribute('data-id');
+
+    delete cart[id];
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+    article.remove();
+    updateTotals();
+}

@@ -54,7 +54,10 @@ export const galleryCheckout = (cart) => {
                     <span>${value.product.product_price}</span>
                 </div>
                 <div class="product__custom">
-                    <img src="../storage/img/option.svg">
+                    <img src="../storage/img/option.svg" class="btn-options">
+                     <div class="product__options-menu" style="display: none;">
+                        <button class="btn-delete">Delete</button>
+                    </div>
                     <div class="product__select">
                         <img src="../storage/img/minusCheckout.svg" class="btn-minus">
                         <span>${value.quantity}</span>
