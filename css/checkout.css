@@ -22,7 +22,7 @@
     padding: var(--space-layout-padding-lr);
     margin-bottom: 75px;
 }
-.checkout__deatils {
+.checkout__details {
     height: 275px;
     overflow-y: scroll;
     
@@ -64,6 +64,7 @@
 }
 .product__description small{
     margin-top: 2px;
+    margin-bottom: 20px;
     color: var(--color3);
 }
 .product__description span{
