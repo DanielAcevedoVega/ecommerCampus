@@ -6,7 +6,15 @@ import { getProductId } from "./module/detail.js";
 let inputSearch = document.querySelector("#input__search");
 let mainArticle = document.querySelector(".main__article");
 let navUl = document.querySelector(".nav__ul");
-let loadPage = document.querySelector('#loader-page')
+let loadPage = document.querySelector('#loader-page');
+let cartCount = document.querySelector('#cart__count');
+let linkValidate = document.querySelector('#link__validate');
+
+const updateCartCount = () =>{
+    let cart = sessionStorage.getItem('cart') ? JSON.parse(sessionStorage.getItem('cart')) : {};
+    let count = Object.keys(cart).reduce((acc, id) => acc + cart[id].quantity, 0);
+    cartCount.innerHTML = count;
+};
 
 const loadProducts = async (dataSearch, isRandom = false) => {
     let res = "";
@@ -82,7 +90,26 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.querySelectorAll('.category-link').forEach(link => {
         link.addEventListener('click', handleCategoryClick);
     });
+
+    updateCartCount();
+
+    linkValidate.addEventListener("click", (e)=>{
+        let cart = sessionStorage.getItem('cart') ? JSON.parse(sessionStorage.getItem('cart')) : {};
+        if (Object.keys(cart).length === 0) {
+            e.preventDefault();
+            Swal.fire({
+                position: "top-end",
+                icon: "warning",
+                title: "Your cart is empty!",
+                showConfirmButton: true,
+            });
+        }
+    });
 });
 
 inputSearch.addEventListener("change", searchProducts);
+
+
+
+
 
