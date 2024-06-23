@@ -38,3 +38,31 @@ export const galleryCategory = ({data: {product_photos}})=>{
             </div>
         </article>`;
 }
+
+export const galleryCheckout = (cart) => {
+    let plantilla = "";
+    for (let id in cart) {
+        let value = cart[id];
+        plantilla += /*html*/`
+            <article class="details__product" data-id="${id}">
+                <div class="product__imagen">
+                    <img src="${value.image}">
+                </div>
+                <div class="product__description">
+                    <h3>${value.title}</h3>
+                    <small>${value.category}</small>
+                    <span>${value.product.product_price}</span>
+                </div>
+                <div class="product__custom">
+                    <img src="../storage/img/option.svg">
+                    <div class="product__select">
+                        <img src="../storage/img/minusCheckout.svg" class="btn-minus">
+                        <span>${value.quantity}</span>
+                        <img src="../storage/img/plusCheckout.svg" class="btn-plus">
+                    </div>
+                </div>
+            </article>`;
+    }
+    return plantilla;
+};
+
