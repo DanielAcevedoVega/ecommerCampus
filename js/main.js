@@ -57,6 +57,11 @@ let searchProducts = async (e) => {
 
 let handleCategoryClick = async (e) => {
     e.preventDefault();
+    document.querySelectorAll('.category-link').forEach(link => {
+        link.classList.remove('active');
+    });
+    let categoryLink = e.target.closest('a');
+    categoryLink.classList.add('active');
     let categoryID = e.target.closest('a').dataset.id;
     let currentCategory = new URLSearchParams(location.search).get("id");
 
@@ -86,6 +91,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         inputSearch.value = "";
         await loadProducts({ search: "", id: "fashion" }, true);
     }
+
+    let currentCategoryID = new URLSearchParams(location.search).get("id");
+    document.querySelectorAll('.category-link').forEach(link => {
+        if (link.dataset.id === currentCategoryID) {
+            link.classList.add('active');
+        }
+    });
 
     document.querySelectorAll('.category-link').forEach(link => {
         link.addEventListener('click', handleCategoryClick);

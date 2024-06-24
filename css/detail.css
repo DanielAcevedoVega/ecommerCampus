@@ -5,6 +5,9 @@
     font-family: "EncodeSans-Regular";
     box-sizing: border-box;
 }
+body{
+    background: linear-gradient(to bottom, #ffffff, #e0f7fa)
+}
 
 .main {
     /* background: red; */

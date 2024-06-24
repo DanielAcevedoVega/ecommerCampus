@@ -5,6 +5,9 @@
     font-family: "EncodeSans-Regular";
     box-sizing: border-box;
 }
+body{
+    background: linear-gradient(to bottom, #ffffff, #e0f7fa)
+}
 
 .header {
     /* background: red; */
@@ -178,7 +181,7 @@
     text-overflow: ellipsis;
 }   
 
-.nav__ul li a:hover{
+.nav__ul li a.active{
     filter: invert(1);
 }
 
@@ -214,6 +217,8 @@
     display: flex;
     /* width: 24px;
     height: 24px; */
+    text-decoration: none;
+    color: var(--color5);
 }
 .footer__ul li a img{
     object-fit: contain;
